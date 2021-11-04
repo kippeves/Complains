@@ -1,0 +1,77 @@
+﻿@page
+@model Marvel.UI.Pages.Contact.IndexModel
+@{
+}
+<div class="container">
+    <div class=" text-center mt-5 ">
+        <h1>Bootstrap Contact Form</h1>
+    </div>
+    <div class="row ">
+        <div class="col-lg-7 mx-auto">
+            <div class="card mt-2 mx-auto p-4 bg-light">
+                <div class="card-body bg-light">
+                    <div class="container">
+                        <form asp-page="/Contact/Index" asp-page-handler="Inquiry" id="contact-form" role="form">
+                            <div class="controls">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group"> <label asp-for="Complain.FirstName">Firstname *</label> <input asp-for="Complain.FirstName" id="form_name" type="text" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required."> </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group"> <label asp-for="Complain.SurName">Lastname *</label> <input asp-for="Complain.SurName" id="form_lastname" type="text" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="Lastname is required."> </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group"> <label asp-for="Complain.Email">Email *</label> <input asp-for="Complain.Email" id="form_email" type="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required."> </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label asp-for="Complain.Need">Please specify your need *</label> 
+                                            
+                                            <select asp-for="Complain.Need" id="form_need" class="form-control" required="required" data-error="Please specify your need.">
+                                                <option value="" selected disabled>--Select Your Issue--</option>
+                                                <option>Request Invoice for order</option>
+                                                <option>Request order status</option>
+                                                <option>Haven't received cashback yet</option>
+                                                <option>Other</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group"> <label asp-for="Complain.Message">Message *</label> <textarea asp-for="Complain.Message" id="form_message" class="form-control" placeholder="Write your message here." rows="4" required="required" data-error="Please, leave us a message."></textarea> </div>
+                                    </div>
+                                    <div class="col-md-12"> <input type="submit" class="btn btn-success btn-send pt-2 btn-block " value="Send Message"> </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div> <!-- /.8 -->
+        </div> <!-- /.row-->
+    </div>
+</div>
+
+
+@*https://bbbootstrap.com/snippets/simple-contact-form-74408136
+Use HTML markup in this link and turn this form into a Razor Pages functional form
+Take the CSS and link it in the Layout so the form gets some nice style :)
+
+//Create the following:
+Data Transfer Object (DTO) class to filter in all the information into a C# Object
+A DataSource which exposes JSON information.
+An IDataAccess and its implementation
+Handle the form submission and update the file in the DataSource Project.
+
+The DataSource and the DTOs must be in separate Class Libraries
+
+
+IDataAccess must have methods to:
+fetch all objects
+Save a new object and update JSON file
+Get one object by ID
+
+
+When done with all of the above create a Razor Page that will show all the entries found in the JSON file.*@
